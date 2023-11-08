@@ -1,0 +1,24 @@
+:root{
+  --dark: #16191c;
+  --dark-x: #1a2126;
+  --light: #ffffff;
+}
+
+.form-control, .btn{
+  min-height: 3.125rem;
+  line-height: initial;
+}
+
+
+.img-1{
+  background-image: url(../img/defaul.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.img-2{
+  background-image: url(../img/defaul.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
