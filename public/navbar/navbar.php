@@ -13,8 +13,6 @@
                     echo '<span class="d-none d-lg-inline-block d-md-inline-block d-sm-inline-block d-xs-none me-3"><strong>' . $_SESSION['correo'] . '</strong></span>';
                 }               
                 ?>
-
-                <span class="me-3"><i class="fa-solid fa-phone me-1 text-warning"></i> <strong>9995764652</strong></span>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-none d-lg-block d-md-block-d-sm-block d-xs-none text-end">
                 <span class="me-3"><i class="fa-solid fa-truck text-muted me-1"></i><a class="text-muted" href="#">Envios</a></span>
@@ -85,7 +83,7 @@
                                 Vendedor
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown1">
-                                <li><a class="dropdown-item" href="./productos.php">productos</a></li>
+                                <li><a class="dropdown-item" href="./productos.php">Productos</a></li>
                             </ul>
                         </li>
                     <?php } ?>
@@ -94,18 +92,18 @@
             <ul class="navbar-nav ms-auto ">
                 <?php if (isset($_SESSION['correo'])) { ?>
                     <li class="nav-item">
-                        <a class="nav-link mx-2 text-uppercase" href="#"><i class="bi bi-cart"></i>Carito</a>
+                        <a class="nav-link mx-2 text-uppercase" href="#"><i class="bi bi-cart"></i></a>
                     </li>
                     <li class="nav-item me-3 me-lg-0 dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="22" alt="" loading="lazy" />
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="#">Configuracion</a></li>
+                            <li><a class="dropdown-item" href="#">Configuración</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="./db/cerrar.php">Cerrar session</a></li>
+                            <li><a class="dropdown-item" href="./db/cerrar.php">Cerrar sessión</a></li>
                         </ul>
                     </li>
 

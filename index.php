@@ -24,6 +24,7 @@
         <?php
             if (isset($_SESSION['nombre'])) {
             $nombre = $_SESSION['nombre'];
+            $apellidos = $_SESSION['apellidos'];
             echo '<h1 class="display-4">¡Bienvenido ' . $nombre . '!</h1>';
         } else {
             echo '<h1 class="display-4">¡Bienvenido!</h1>';
@@ -55,13 +56,13 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="./img/defaul.jpeg" class="d-block w-100" alt="...">
+                                <img src="./img/a1.jpg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="./img/defaul.jpeg" class="d-block w-100" alt="...">
+                                <img src="./img/a2.jpg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="./img/defaul.jpeg" class="d-block w-100" alt="...">
+                                <img src="./img/a3.jpg" class="d-block w-100" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
