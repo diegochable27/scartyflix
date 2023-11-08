@@ -21,7 +21,15 @@
     <br>
     <header class="jumbotron jumbotron-fluid">
         <div class="container text-center">
-            <h1 class="display-4">¡Bienvenido a Gilmer Balam!</h1>
+        <?php
+            if (isset($_SESSION['nombre'])) {
+            $nombre = $_SESSION['nombre'];
+            echo '<h1 class="display-4">¡Bienvenido ' . $nombre . '!</h1>';
+        } else {
+            echo '<h1 class="display-4">¡Bienvenido!</h1>';
+        }
+        ?>
+
             <p class="lead">Donde encontrarás una gran variedad de productos a los mejores precios.</p>
             <a href="#" class="btn btn-warning btn-lg">Explora más</a>
         </div>
@@ -33,9 +41,9 @@
             <div class="row">
                 <div class="col-md-6 text-center">
                     <h2>Acerca de Nosotros</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla neque expedita nam! Assumenda optio cupiditate error nostrum repellendus sapiente molestias. Ad dignissimos animi porro similique nisi veritatis, rem modi quidem!</p>
-                    <h2>Acerca de Nosotros</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla neque expedita nam! Assumenda optio cupiditate error nostrum repellendus sapiente molestias. Ad dignissimos animi porro similique nisi veritatis, rem modi quidem!</p>
+                    <p>Somos una tienda apasionada por brindar a nuestros clientes productos de alta calidad y una experiencia de compra excepcional.</p>
+                    <h2>Nuestro Compromiso</h2>
+                    <p>Nuestro compromiso con la excelencia y la satisfacción del cliente nos impulsa a seguir creciendo y mejorando. Nuestro experimentado equipo está aquí para ayudarte en cada paso del camino, desde la selección de productos hasta la entrega a tu puerta.</p>
 
                 </div>
                 <div class="col-md-6">

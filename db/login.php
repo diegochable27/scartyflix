@@ -11,6 +11,8 @@ $row = mysqli_fetch_array($resultado);
 
 if ($row['correo'] == $correo && $row['contrasena'] == $contrasena) {
     $_SESSION['correo'] = $correo;
+    $_SESSION['nombre'] = $row['nombre'];
+    $_SESSION['apellidos'] = $row['apellidos'];
     $_SESSION['rol'] = $row['id_rol'];
     $_SESSION['id'] = $row['id'];   
     $_SESSION['foto'] = $row['foto']; 
