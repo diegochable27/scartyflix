@@ -21,7 +21,7 @@
     <br>
     <header class="jumbotron jumbotron-fluid">
         <div class="container text-center">
-            <h1 class="display-4">¡Bienvenido a Diego may!</h1>
+            <h1 class="display-4">¡Bienvenido a Gilmer Balam!</h1>
             <p class="lead">Donde encontrarás una gran variedad de productos a los mejores precios.</p>
             <a href="#" class="btn btn-warning btn-lg">Explora más</a>
         </div>
