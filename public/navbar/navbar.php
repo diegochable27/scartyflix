@@ -21,7 +21,7 @@
 </div>
 <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="http://localhost/shops/index.php"><i class="fa-solid fa-shop me-2"></i> <strong>Shops</strong></a>
+        <a class="navbar-brand" href="http://localhost/shops/index.php"><i class="fa-solid fa-shop me-2"></i> <strong>Fancy Store</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

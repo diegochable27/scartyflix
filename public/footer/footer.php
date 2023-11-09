@@ -15,6 +15,7 @@
           <li><a href="#">Contacto</a></li>
         </ul>
       </div>
+      <h7 class="text-center">Copyright © 2023 Fancy Store.</h7>
     </div>
   </div>
 </footer>
