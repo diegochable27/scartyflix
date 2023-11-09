@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6">
         <h5>Información de contacto</h5>
-        <p>Correo electrónico: example@email.com</p>
+        <p>Correo electrónico: contacto@fancystore.com</p>
         <p>Teléfono: (123) 456-7890</p>
       </div>
       <div class="col-md-6">
