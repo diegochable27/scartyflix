@@ -3,10 +3,8 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 centerOnMobile">
                 <select class="me-3 border-0 bg-light">
-                    <option value="en-us">EN-US</option>
-                    <option value="en-gb">EN-GB</option>
-                    <option value="en-ca">EN-CA</option>
-                    <option value="en-au">EN-AU</option>
+                    <option value="en-us">ESPAÑOL</option>
+                    <option value="en-gb">INGLES</option>
                 </select>
                 <?php
                 if (isset($_SESSION['correo'])) {
@@ -99,7 +97,7 @@
                             <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="22" alt="" loading="lazy" />
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="#">Configuración</a></li>
+                            <li><a class="dropdown-item" href="./configuracion.php">Configuración</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
