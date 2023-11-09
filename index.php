@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
     <link href="./styles/navbarestilos.css">
-    <title>Shops</title>
+    <title>Fancy Store</title>
 </head>
 
 <body class="g-0">
