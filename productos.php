@@ -16,7 +16,14 @@
     session_start();
     include_once "./public/navbar/navbar.php";
     ?>
+    <nav aria-label="breadcrumb margen">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="http://localhost/shops/index.php">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Productos</li>
+        </ol>
+    </nav>
     <div style="margin: 20px;">
+    
         <br>
         <div class="d-flex justify-content-between">
             <?php
@@ -31,13 +38,15 @@
 
             ?>
 
-            <a href=""  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <a href="./AgregarProductos.php"  class="btn btn-primary">
                 Agregar Producto
             </a>
 
             
 
         </div>
+
+        <br>
         <table class="table table-light table-striped">
             <thead>
                 <td class="col">Id</td>

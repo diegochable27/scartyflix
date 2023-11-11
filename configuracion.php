@@ -17,6 +17,16 @@
     <?php
     session_start();
     include_once "./public/navbar/navbar.php";
+
+    include("./db/conexion.php");
+    $id = $_SESSION['id'];
+    $sql = "SELECT * FROM Usuarios WHERE id = '$id'";
+    $result = mysqli_query($conexion, $sql);
+    $row = mysqli_fetch_array($result);
+    $nombres = $row['nombre'];
+    $apellidos = $row['apellidos'];
+    $correos = $row['correo'];
+
     ?>
     <div style="margin: 20px;">
         <br>
@@ -30,16 +40,16 @@
                         <div class="col-12 d-flex flex-column">
                             <label for="exampleInputEmail1" class="form-label font-weight-bold">Nombre y apellido</label>
                         <div class="d-flex">
-                            <input type="text" class="form-control mb-2" name="nombre" id="nombre" placeholder="Nombre">
-                            <input type="text" class="form-control mb-2 ms-2" name="apellidos" id="apellidos" placeholder="Apellido">
+                            <input type="text" class="form-control mb-2" name="nombre" id="nombre" placeholder="Nombre" value=<?php echo $nombres ?> >
+                            <input type="text" class="form-control mb-2 ms-2" name="apellidos" id="apellidos" placeholder="Apellido" value=<?php echo $apellidos ?> >
                         </div>
                         </div>
                         <hr />
                         <div class="mb-4">                      
-                                <label for="exampleInputEmail1" class="form-label font-weight-bold">Contraseña actual</label>
-                                <input type="password" class="form-control mb-2" name="contrasena" id="contrasena" placeholder="Ingresa tu contraseña">
-                                <label for="exampleInputEmail1" class="form-label font-weight-bold">Contraseña nueva</label>
-                                <input type="password" class="form-control mb-2" name="contrasena" id="contrasena" placeholder="Ingresa tu contraseña">
+                            <label for="exampleInputEmail1" class="form-label font-weight-bold">Contraseña actual</label>
+                            <input type="password" class="form-control mb-2" name="contrasena" id="contrasena" placeholder="Ingresa tu contraseña" value=<?php echo $correos ?> >
+                            <label for="exampleInputEmail1" class="form-label font-weight-bold">Contraseña nueva</label>
+                            <input type="password" class="form-control mb-2" name="contrasena" id="contrasena" placeholder="Ingresa tu contraseña">
                         </div>
                             <div>
                                 <button type="submit" class="btn btn-warning w-80">Guardar</button>

@@ -1,4 +1,4 @@
 
 function hola () {
-    return  alert("Hola")
+    return alert("Hola")
 }
