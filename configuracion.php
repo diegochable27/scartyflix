@@ -80,7 +80,6 @@
                                     $nombre = $_SESSION['nombre'];
                                     $apellidos = $_SESSION['apellidos'];
                                     $correo = $_SESSION['correo'];
-                                    $nombrerol = $_SESSION['rol'];
                                     echo '<h3>' . $nombre . ' ' . $apellidos . '</h3>';
                                     echo '<h6>' . $correo . '</h6>';
                                     echo '<h6>' . $nombrerol . '</h6>';
