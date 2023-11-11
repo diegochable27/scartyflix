@@ -96,11 +96,6 @@
                                 ?>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="validatedCustomFile" class="form-label">Agregar imaganes</label>
-                            <input type="file" class="form-control" id="validatedCustomFile"  name="imagenes[]"  multiple required>
-                            <div class="invalid-feedback">Agrega imagenes</div>
-                        </div>
                         <div class="flex-column">
                             <button type="submit" class="btn btn-warning w-100">Guardar</button>
                             <br>
@@ -122,6 +117,5 @@
     <br>
     <br>
     <?php include_once "./public/footer/footer.php"; ?>
-    <script src="./js/image.js"></script>
 </body>
 </html>

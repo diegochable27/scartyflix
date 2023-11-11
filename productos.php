@@ -96,8 +96,8 @@
                         //que envie el id del producto y del dueño
                         echo "<a href='./editarproductos.php?id=$idpro' class='btn btn-warning'>Editar</a>";
 
-                        echo "<a href='./db/eliminarProducto.php?id=$id' class='btn btn-danger ml-3'>Eliminar</a>";
-                        echo "<a href='./verImgProduct.php?id=$id' class='btn btn-success ml-3' >Ver imagnes</a>";
+                        echo "<a href='./db/eliminarproducto.php?id=$idpro' class='btn btn-danger ml-3'>Eliminar</a>";
+                        echo "<a href='./verImgProduct.php?id=$idpro' class='btn btn-success ml-3' >Ver imagnes</a>";
                         echo "</td>";
                         echo "</tr>";
                     }
@@ -105,6 +105,7 @@
             </tbody>
         </table>
     </div>
+    
     
     <?php include_once "./public/footer/footer.php"; ?>
 </body>
