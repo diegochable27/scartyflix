@@ -50,7 +50,7 @@
                     <a class="nav-link mx-2 text-uppercase active" href="http://localhost/shops/index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2 text-uppercase" href="#">Productos</a>
+                    <a class="nav-link mx-2 text-uppercase" href="http://localhost/shops/todoslosproductos.php">Productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mx-2 text-uppercase" href="#">Categorias</a>

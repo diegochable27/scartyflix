@@ -22,5 +22,5 @@ if ($resultado) {
     window.location= '../public/auth/register.php'
     </script>";
 }
-
 ?>
+

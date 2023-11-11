@@ -21,15 +21,15 @@
     <br>
     <header class="jumbotron jumbotron-fluid">
         <div class="container text-center">
-        <?php
+            <?php
             if (isset($_SESSION['nombre'])) {
-            $nombre = $_SESSION['nombre'];
-            $apellidos = $_SESSION['apellidos'];
-            echo '<h1 class="display-4">¡Bienvenido ' . $nombre . '!</h1>';
-        } else {
-            echo '<h1 class="display-4">¡Bienvenido!</h1>';
-        }
-        ?>
+                $nombre = $_SESSION['nombre'];
+                $apellidos = $_SESSION['apellidos'];
+                echo '<h1 class="display-4">¡Bienvenido ' . $nombre . '!</h1>';
+            } else {
+                echo '<h1 class="display-4">¡Bienvenido!</h1>';
+            }
+            ?>
 
             <p class="lead">Donde encontrarás una gran variedad de productos a los mejores precios.</p>
             <a href="#" class="btn btn-warning btn-lg">Explora más</a>
@@ -76,6 +76,43 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section>
+        <div class="container mt-100">
+            <div class="container d-flex justify-content-center mt-100">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="product-wrapper mb-45 text-center">
+                            <div class="product-img"> 
+                                <a href="#" data-abc="true"> <img src="./img/img1.jpg" alt=""> </a> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-wrapper mb-45 text-center">
+                            <div class="product-img"> 
+                                <a href="#" data-abc="true"> <img src="./img/img2.jpg" alt=""> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-wrapper mb-45 text-center">
+                            <div class="product-img"> 
+                                <a href="#" data-abc="true"> <img src="./img/im3.jpg" alt=""> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-wrapper mb-45 text-center">
+                            <div class="product-img"> 
+                                <a href="#" data-abc="true"> <img src="./img/img2.jpg" alt=""> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     <br>
