@@ -25,21 +25,55 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card mb-4">
-                    <img src="./uploads/Nike Dunk High Retro/zapato.png" class="card-img-top" alt="Nombre del Producto">
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del Producto</h5>
-                        <p class="card-text">Descripción del producto. Puedes agregar detalles aquí.</p>
-                        <a href="#" class="btn btn-primary mb-2">Agregar al Carrito</a>
-                        <button type="button" class="btn btn-outline-secondary mb-2">Agregar a Favoritos</button>
-                    </div>
+            <?php
+            include("./db/conexion.php");
+
+            $sql = "SELECT * FROM Productos";
+            $result = mysqli_query($conexion, $sql);
+
+            while ($row = mysqli_fetch_array($result)) {
+                $nombre = $row['nombre'];
+                $descripcion = $row['descripcion'];
+                if (strlen($descripcion) > 80) {
+                    $descripcion = substr($descripcion, 0, 80) . "...";
+                }
+
+                $sqlfotos = "SELECT * FROM imagenes WHERE propietario = '$row[nombre]'";
+                $resultfotos = mysqli_query($conexion, $sqlfotos);
+                //solo guardar el primer resultado
+                $rowfotos = mysqli_fetch_array($resultfotos);
+                $foto = $rowfotos['ruta_imagen'];
+                
+            ?>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card mb-3">
+                            <div class="position-relative">
+                            <?php echo '<img class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" src="'.$foto.'" alt="Nombre del Producto">'?>
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <button type="button" class="btn btn-outline-secondary"><i class="far fa-heart"></i></button>
+                                    <button type="button" class="btn btn-outline-secondary ms-2"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-decoration-none text-warning"><?php echo $nombre ?></h5>
+                                <p class="card-text text-decoration-none text-dark"><?php echo $descripcion ?></p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
+
+            <?php
+            }
+            ?>
+
         </div>
     </div>
     <br>
     <?php include_once "./public/footer/footer.php"; ?>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </body>
 
 </html>
