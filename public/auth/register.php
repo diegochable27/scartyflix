@@ -66,7 +66,7 @@
                     <img src="../../img/logo.png" class="img-fluid" width="100">
                 </div>
                 <div class="px-lg-5 pt-lg-4 p-4 w-100 align-self-center">
-                    <h1 class="font-weight-bold text-dark mb-4">Crar cuenta</h1>
+                    <h1 class="font-weight-bold text-dark mb-4">Crear cuenta</h1>
                     <form class="mb-5" action="../../db/register.php" method="post">
                         <div class="row">
                             <div class="col-6">
@@ -89,7 +89,7 @@
 
                         <button type="submit" class="btn btn-warning w-100">Crear cuenta</button>
                     </form>
-                    <p class="font-weight-bold text-center">O Crar cuenta con</p>
+                    <p class="font-weight-bold text-center">O Crear cuenta con</p>
                     <div class="d-flex justify-content-around">
                         <button type="button" class="btn btn-outline-dark flex-grow-1 mr-2"><i class="bi bi-facebook"></i> Facebook</button>
                         <button type="button" class="btn btn-outline-dark flex-grow-1 ml-2"><i class="bi bi-google"></i> Google</button>
