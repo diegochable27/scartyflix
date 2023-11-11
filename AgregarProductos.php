@@ -34,7 +34,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <form action="" class="form form-inline" method="post" enctype="multipart/form-data">
+                    <form action="./db/AgregarProductos.php" class="form form-inline" method="post" enctype="multipart/form-data">
                         <h2 class="title-form">Agregar Productos</h2>
                         <div class="mb-3">
                             <label class="form-label" for="inlineFormCustomSelectPref">Despachador</label>
@@ -45,22 +45,22 @@
                         </div>
                         <div>
                             <label for="nombre" class="form-label font-weight-bold">Nombre del producto</label>
-                            <input type="text" class="form-control mb-2" name="nombre" id="nombre" >
+                            <input type="text" class="form-control mb-2" name="nombre" id="nombre" required>
                         </div>
                         <div class="mb-3">
                             <label for="descripcion" class="form-label font-weight-bold">Descripcion</label>
-                            <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+                            <textarea class="form-control" name="descripcion" id="descripcion" rows="4" required></textarea>
                         </div>
 
                         <div class="col-12 d-flex flex-column">
                             <div class="d-flex">
                                 <div class="col-6">
                                     <label for="cantidad" class="form-label font-weight-bold">Cantidad</label>
-                                    <input type="number" class="form-control " name="cantidad" id="cantidad" >
+                                    <input type="number" class="form-control " name="cantidad" id="cantidad" required>
                                 </div>
                                 <div class="col-6">
                                     <label for="precio" class="form-label font-weight-bold ms-1">Precio</label>
-                                    <input type="number" step="any"  class="form-control mb-2 ms-1" name="precio" id="precio">
+                                    <input type="number" step="any"  class="form-control mb-2 ms-1" name="precio" id="precio" required>
                                 </div>
                                 
                                 
@@ -69,7 +69,7 @@
 
                         <div class="mb-3">
                             <label class="form-label" for="inlineFormCustomSelectPref">Categoria</label>
-                            <select class="form-select" name="Categoria" id="inlineFormCustomSelectPref">
+                            <select class="form-select" name="Categoria" id="inlineFormCustomSelectPref" required>
                                 <option selected>Categorias...</option>
                                 <?php
                                                             

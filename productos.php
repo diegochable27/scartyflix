@@ -61,8 +61,14 @@
                 <?php
                     include("./db/conexion.php");
                     $id = $_SESSION['id'];
-                    $sql = "SELECT * FROM Productos WHERE id_Vendedor = '$id'";
-                    $result = mysqli_query($conexion, $sql);
+                    if($tipo == "Admin"){
+                        $sql = "SELECT * FROM Productos";
+                        $result = mysqli_query($conexion, $sql);
+                    }else{
+                        $sql = "SELECT * FROM Productos WHERE id_Vendedor = '$id'";
+                        $result = mysqli_query($conexion, $sql);
+                    }
+                    
                     while($row = mysqli_fetch_array($result)){
                         $id = $row['id_producto'];
                         $nombre = $row['nombre'];
@@ -70,6 +76,15 @@
                         $categoria = $row['id_categoria'];
                         $cantidad = $row['cantidad'];
                         $precio = $row['precio'];
+
+                        $sqlcategoria = "SELECT * FROM categoria WHERE id_categoria = '$categoria'";
+                        $resultcategoria = mysqli_query($conexion, $sqlcategoria);
+                        $rowcategoria = mysqli_fetch_array($resultcategoria);
+                        $categoria = $rowcategoria['nombre'];
+
+                        if(strlen($descripcion) > 50){
+                            $descripcion = substr($descripcion, 0, 50) . "...";
+                        }
                         echo "<tr>";
                         echo "<td>$id</td>";
                         echo "<td>$nombre</td>";
@@ -77,9 +92,10 @@
                         echo "<td>$categoria</td>";
                         echo "<td>$cantidad</td>";
                         echo "<td>$precio</td>";
-                        echo "<td>";
-                        echo "<a href='./EditarProducto.php?id=$id' class='btn btn-warning'></a>";
-                        echo "<a href='./db/eliminarProducto.php?id=$id' class='btn btn-danger'>Eliminar</a>";
+                        echo "<td class = 'justify-content-between' >";
+                        echo "<a href='./EditarProducto.php?id=$id' class='btn btn-warning ml-3'>Editar</a>";
+                        echo "<a href='./db/eliminarProducto.php?id=$id' class='btn btn-danger ml-3'>Eliminar</a>";
+                        echo "<a href='./verImgProduct.php?id=$id' class='btn btn-success ml-3' >Ver imagnes</a>";
                         echo "</td>";
                         echo "</tr>";
                     }
