@@ -70,7 +70,7 @@
                     }
                     
                     while($row = mysqli_fetch_array($result)){
-                        $id = $row['id_producto'];
+                        $idpro = $row['id_producto'];
                         $nombre = $row['nombre'];
                         $descripcion = $row['descripcion'];
                         $categoria = $row['id_categoria'];
@@ -86,14 +86,16 @@
                             $descripcion = substr($descripcion, 0, 50) . "...";
                         }
                         echo "<tr>";
-                        echo "<td>$id</td>";
+                        echo "<td>$idpro</td>";
                         echo "<td>$nombre</td>";
                         echo "<td>$descripcion</td>";
                         echo "<td>$categoria</td>";
                         echo "<td>$cantidad</td>";
                         echo "<td>$precio</td>";
                         echo "<td class = 'justify-content-between' >";
-                        echo "<a href='./EditarProducto.php?id=$id' class='btn btn-warning ml-3'>Editar</a>";
+                        //que envie el id del producto y del dueño
+                        echo "<a href='./editarproductos.php?id=$idpro' class='btn btn-warning'>Editar</a>";
+
                         echo "<a href='./db/eliminarProducto.php?id=$id' class='btn btn-danger ml-3'>Eliminar</a>";
                         echo "<a href='./verImgProduct.php?id=$id' class='btn btn-success ml-3' >Ver imagnes</a>";
                         echo "</td>";
