@@ -1,5 +1,5 @@
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <div class="superNav border-bottom py-2 bg-light">
     <div class="container">
@@ -91,13 +91,17 @@
                 <?php } ?>
             </ul>
             <ul class="navbar-nav ms-auto ">
-                <?php if (isset($_SESSION['correo'])) { ?>
+                <?php if (isset($_SESSION['correo'])) { 
+                    $fotoperfil = $_SESSION['foto'];
+                ?>
                     <li class="nav-item">
                         <a class="nav-link mx-2 text-uppercase" href="#"><i class="bi bi-cart"></i></a>
                     </li>
                     <li class="nav-item me-3 me-lg-0 dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="22" alt="" loading="lazy" />
+                            <?php
+                                echo '<img src="'.$fotoperfil.'" class="rounded-circle" height="22" alt="" loading="lazy" />'
+                            ?>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown1">
                             <li><a class="dropdown-item" href="./configuracion.php">Configuración</a></li>

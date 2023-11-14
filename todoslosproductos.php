@@ -34,6 +34,7 @@
             while ($row = mysqli_fetch_array($result)) {
                 $nombre = $row['nombre'];
                 $descripcion = $row['descripcion'];
+                $idproducto = $row['id_producto'];
                 if (strlen($descripcion) > 80) {
                     $descripcion = substr($descripcion, 0, 80) . "...";
                 }
@@ -43,11 +44,14 @@
                 //solo guardar el primer resultado
                 $rowfotos = mysqli_fetch_array($resultfotos);
                 $foto = $rowfotos['ruta_imagen'];
+                $precio = $row['precio'];
                 
             ?>
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <a href="#" class="text-decoration-none">
+                    <?php
+                        echo '<a href="./vistadeproducto.php?id='.$idproducto.'" class="text-decoration-none">';
+                    ?>
                         <div class="card mb-3">
                             <div class="position-relative">
                             <?php echo '<img class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" src="'.$foto.'" alt="Nombre del Producto">'?>
@@ -59,6 +63,7 @@
                             <div class="card-body">
                                 <h5 class="card-title text-decoration-none text-warning"><?php echo $nombre ?></h5>
                                 <p class="card-text text-decoration-none text-dark"><?php echo $descripcion ?></p>
+                                <h5 class="card-text text-decoration-none text-primary">$<?php echo $precio ?></h5>
                             </div>
                         </div>
                     </a>
