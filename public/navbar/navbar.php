@@ -41,7 +41,7 @@
         <!-- Buscador de PC -->
         <div class=" collapse navbar-collapse" id="navbarNavDropdown">
             <div class="ms-auto d-none d-lg-block">
-                <form action="BuscarProductos.php"  method="GET">
+                <form action="./db/BuscarProductos.php"  method="GET">
                     <div class="input-group">
                         <span class="border-warning input-group-text bg-warning text-white"><i class="bi bi-search"></i></span>
                         <input type="text" name="nombreproducto" class="form-control border-warning" style="color:#7a7a7a" placeholder="Buscar por nombre">
