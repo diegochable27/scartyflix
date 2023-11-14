@@ -122,7 +122,8 @@
                                 </br>
                                 </br>
                                 <h3>Error</h3>
-                                <p>El tipo de imagen no es valido, intente nuevamente con una imagen (.jpeg, .png, , .jpg).</p>
+                                <p>El tipo de imagen no es valido, intente nuevamente con una imagen (.jpeg, .png,
+                                    .jpg).</p>
                             </div>
                             <div class="modal-footer justify-content-center">
                                 <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal"
@@ -132,6 +133,28 @@
                     </div>
                 </div>
                 <!-- Fin ventana modal error-->
+
+                <!-- La ventana modal completo-->
+                <div class="modal" tabindex="-1" role="dialog" id="ModalCompleto">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            </div>
+                            <div class="modal-body text-center">
+                                <i class="fas fa-check-circle fa-3x text-success"></i>
+                                </br>
+                                </br>
+                                <h3>Completo</h3>
+                                <p>El archivo fue subido exitosamente.</p>
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                                <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal"
+                                    style="width: 80px;">OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin ventana modal completo-->
             </div>
         </div>
     </div>
