@@ -38,13 +38,14 @@
                 </div>
             </form>
         </div>
+        <!-- Buscador de PC -->
         <div class=" collapse navbar-collapse" id="navbarNavDropdown">
             <div class="ms-auto d-none d-lg-block">
-                <form action="">
+                <form action="BuscarProductos.php"  method="GET">
                     <div class="input-group">
                         <span class="border-warning input-group-text bg-warning text-white"><i class="bi bi-search"></i></span>
-                        <input type="text" class="form-control border-warning" style="color:#7a7a7a">
-                        <button class="btn btn-warning text-white">Buscar</button>
+                        <input type="text" name="nombreproducto" class="form-control border-warning" style="color:#7a7a7a" placeholder="Buscar por nombre">
+                        <button type="submit" class="btn btn-warning text-white">Buscar</button>
                     </div>
                 </form>
             </div>
