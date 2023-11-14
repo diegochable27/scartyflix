@@ -87,12 +87,18 @@
                                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
                             <div style="position: relative; text-align: center;">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" height="200px"
-                                    width="200px" alt="..." class="mx-auto rounded-circle mb-3">
-                                <button type="button" class="btn btn-dark btn-sm" data-toggle="modal"
-                                    data-target="#editarModal"
+                                <?php
+                                    $foto = $row['foto'];
+                                    echo '<img src="'.$foto.'" height="200px"
+                                    width="200px" alt="..." class="mx-auto rounded-circle mb-3" id="fotoperfil">';
+                                ?>
+                                <img src="./img/logodefaul.png" height="200px" width="200px" alt="..." class="mx-auto rounded-circle mb-3 d-none " id="fotoperfilcambiado">
+                                <form action="" class="-none">
+                                    <input type="file" id="inputFile" name="filename">
+                                </form>
+                                <button type="button" class="btn btn-dark btn-sm" 
                                     style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
-                                    <i class="fa fa-pencil-square-o"></i> Editar
+                                    <i class="fa fa-pencil-square-o" id="btnEditar"></i> Editar
                                 </button>
                             </div>
 
@@ -125,6 +131,7 @@
     </div>
 
     <?php include_once "./public/footer/footer.php"; ?>
+    <script src="./js/Agregarimg.js"></script>
 </body>
 
 </html>

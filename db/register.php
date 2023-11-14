@@ -6,7 +6,7 @@ $correo = $_POST['correo'];
 $contrasena = $_POST['contrasena'];
 $rol = 3;
 $estado = 1;
-$foto = "default.jpeg";
+$foto = "./img/logodefaul.png";
 
 $consulta = "INSERT INTO usuarios(nombre, apellidos, correo, contrasena, foto, id_rol, id_estatus) VALUES ('$nombre', '$apellido', '$correo', '$contrasena' , '$foto', '$rol', '$estado')";
 $resultado = mysqli_query($conexion, $consulta);
