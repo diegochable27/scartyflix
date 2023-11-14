@@ -20,7 +20,7 @@ $(document).on("change", "#validatedCustomFile", function () {
     if (seEncontraronArchivosNoValidos) {
         $("#ModalError").modal("show");
     } else {
-        alert("Todos los archivos son validos");
+        $("#ModalError").modal("show");
     }
 })
 

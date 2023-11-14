@@ -58,7 +58,7 @@
                                 <div class="position-absolute top-0 end-0 m-2">
                                     <form action="./todoslosproductos.php">
                                         <button type="button" class="btn btn-outline-secondary"><i class="far fa-heart"></i></button>
-                                        <button type="submit" class="btn btn-outline-secondary ms-2" name="carrito" ><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="submit" class="btn btn-outline-secondary ms-2" name=<?php  echo "carrito" . $idproducto ?> ><i class="fas fa-shopping-cart"></i></button>
                                     </form>
                                 </div>
                             </div>
@@ -72,8 +72,12 @@
                 </div>
 
             <?php
-                if(isset($_GET['carrito'])){
-                    echo "hola";
+                if(isset($_GET["carrito" . $idproducto])){
+                    $sqlcarrito = "INSERT INTO carrito (id_product, id_usuario, precio) VALUES ('$idproducto', '$_SESSION[id]', '$precio')";
+                    $resultcarrito = mysqli_query($conexion, $sqlcarrito);
+                    if($resultcarrito){
+                        echo '<script>alert("Producto agregado al carrito")</script>';
+                    }
                 }
             }
                 //si se preciona el boton de carrito se agrega el producto al carrito

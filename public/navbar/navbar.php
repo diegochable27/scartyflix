@@ -95,7 +95,7 @@
                     $fotoperfil = $_SESSION['foto'];
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link mx-2 text-uppercase" href="#"><i class="bi bi-cart"></i></a>
+                        <a class="nav-link mx-2 text-uppercase" href="./carrito.php"><i class="bi bi-cart"></i></a>
                     </li>
                     <li class="nav-item me-3 me-lg-0 dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
