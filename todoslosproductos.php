@@ -48,7 +48,7 @@
                 
             ?>
 
-                <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12" style="width: 400px;">
                     <?php
                         echo '<a href="./vistadeproducto.php?id='.$idproducto.'" class="text-decoration-none">';
                     ?>
@@ -56,8 +56,10 @@
                             <div class="position-relative">
                             <?php echo '<img class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" src="'.$foto.'" alt="Nombre del Producto">'?>
                                 <div class="position-absolute top-0 end-0 m-2">
-                                    <button type="button" class="btn btn-outline-secondary"><i class="far fa-heart"></i></button>
-                                    <button type="button" class="btn btn-outline-secondary ms-2"><i class="fas fa-shopping-cart"></i></button>
+                                    <form action="./todoslosproductos.php">
+                                        <button type="button" class="btn btn-outline-secondary"><i class="far fa-heart"></i></button>
+                                        <button type="submit" class="btn btn-outline-secondary ms-2" name="carrito" ><i class="fas fa-shopping-cart"></i></button>
+                                    </form>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -70,7 +72,13 @@
                 </div>
 
             <?php
+                if(isset($_GET['carrito'])){
+                    echo "hola";
+                }
             }
+                //si se preciona el boton de carrito se agrega el producto al carrito
+                
+
             ?>
 
         </div>
