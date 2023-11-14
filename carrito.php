@@ -99,7 +99,7 @@
                              ?></h4>
                         </div>
                         <div class="d-flex flex-column mt-4">
-                            <button class="btn btn-primary btn-sm" type="button">Comprar</button>
+                            <a href="./pestañadepago.php" class="btn btn-primary btn-sm" type="button">Comprar</a>
                         </div>
                     </div>
                 </div>
