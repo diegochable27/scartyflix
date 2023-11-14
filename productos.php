@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link href="./styles/navbarestilos.css">
     <title>Productos</title>
 </head>
+
 <body>
     <?php
     session_start();
@@ -23,33 +25,33 @@
         </ol>
     </nav>
     <div style="margin: 20px;">
-    
+
         <br>
         <div class="d-flex justify-content-between">
             <?php
-                include("./db/conexion.php");
-                $id = $_SESSION['id'];
-                $sql = "SELECT * FROM Usuarios WHERE id = '$id'";
-                $result = mysqli_query($conexion, $sql);
-                $row = mysqli_fetch_array($result);
-                $tipo = $row['nombre'];
+            include("./db/conexion.php");
+            $id = $_SESSION['id'];
+            $sql = "SELECT * FROM Usuarios WHERE id = '$id'";
+            $result = mysqli_query($conexion, $sql);
+            $row = mysqli_fetch_array($result);
+            $tipo = $row['nombre'];
 
-                echo "<p>Productos de $tipo</p>";
+            echo "<p>Productos de $tipo</p>";
 
             ?>
 
-            <a href="./AgregarProductos.php"  class="btn btn-primary">
+            <a href="./AgregarProductos.php" class="btn btn-primary">
                 Agregar Producto
             </a>
 
-            
+
 
         </div>
 
         <br>
         <table class="table table-light table-striped">
             <thead>
-                <td class="col">Id</td>
+                <td class="col">Folio</td>
                 <td class="col">Nommbre</td>
                 <td class="col">Descripcion</td>
                 <td class="col">Categoria</td>
@@ -59,54 +61,56 @@
             </thead>
             <tbody>
                 <?php
-                    include("./db/conexion.php");
-                    $id = $_SESSION['id'];
-                    if($tipo == "Admin"){
-                        $sql = "SELECT * FROM Productos";
-                        $result = mysqli_query($conexion, $sql);
-                    }else{
-                        $sql = "SELECT * FROM Productos WHERE id_Vendedor = '$id'";
-                        $result = mysqli_query($conexion, $sql);
+                include("./db/conexion.php");
+                $id = $_SESSION['id'];
+                if ($tipo == "Admin") {
+                    $sql = "SELECT * FROM Productos";
+                    $result = mysqli_query($conexion, $sql);
+                } else {
+                    $sql = "SELECT * FROM Productos WHERE id_Vendedor = '$id'";
+                    $result = mysqli_query($conexion, $sql);
+                }
+
+                while ($row = mysqli_fetch_array($result)) {
+                    $idpro = $row['id_producto'];
+                    $nombre = $row['nombre'];
+                    $descripcion = $row['descripcion'];
+                    $categoria = $row['id_categoria'];
+                    $cantidad = $row['cantidad'];
+                    $precio = $row['precio'];
+
+                    $sqlcategoria = "SELECT * FROM categoria WHERE id_categoria = '$categoria'";
+                    $resultcategoria = mysqli_query($conexion, $sqlcategoria);
+                    $rowcategoria = mysqli_fetch_array($resultcategoria);
+                    $categoria = $rowcategoria['nombre'];
+
+                    if (strlen($descripcion) > 50) {
+                        $descripcion = substr($descripcion, 0, 50) . "...";
                     }
-                    
-                    while($row = mysqli_fetch_array($result)){
-                        $idpro = $row['id_producto'];
-                        $nombre = $row['nombre'];
-                        $descripcion = $row['descripcion'];
-                        $categoria = $row['id_categoria'];
-                        $cantidad = $row['cantidad'];
-                        $precio = $row['precio'];
+                    echo "<tr>";
+                    echo "<td>$idpro</td>";
+                    echo "<td>$nombre</td>";
+                    echo "<td>$descripcion</td>";
+                    echo "<td>$categoria</td>";
+                    echo "<td>$cantidad</td>";
+                    echo "<td>$precio</td>";
+                    echo "<td class='justify-content-between'>";
+                    // Que envíe el id del producto y del dueño
+                    echo "<a href='./editarproductos.php?id=$idpro' class='btn btn-warning'>Editar</a>";
 
-                        $sqlcategoria = "SELECT * FROM categoria WHERE id_categoria = '$categoria'";
-                        $resultcategoria = mysqli_query($conexion, $sqlcategoria);
-                        $rowcategoria = mysqli_fetch_array($resultcategoria);
-                        $categoria = $rowcategoria['nombre'];
-
-                        if(strlen($descripcion) > 50){
-                            $descripcion = substr($descripcion, 0, 50) . "...";
-                        }
-                        echo "<tr>";
-                        echo "<td>$idpro</td>";
-                        echo "<td>$nombre</td>";
-                        echo "<td>$descripcion</td>";
-                        echo "<td>$categoria</td>";
-                        echo "<td>$cantidad</td>";
-                        echo "<td>$precio</td>";
-                        echo "<td class = 'justify-content-between' >";
-                        //que envie el id del producto y del dueño
-                        echo "<a href='./editarproductos.php?id=$idpro' class='btn btn-warning'>Editar</a>";
-
-                        echo "<a href='./db/eliminarproducto.php?id=$idpro' class='btn btn-danger ml-3'>Eliminar</a>";
-                        echo "<a href='./verImgProduct.php?id=$idpro' class='btn btn-success ml-3' >Ver imagnes</a>";
-                        echo "</td>";
-                        echo "</tr>";
-                    }
+                    // Agrega un espacio entre los botones utilizando las clases de Bootstrap
+                    echo "<a href='./db/eliminarproducto.php?id=$idpro' class='btn btn-danger ml-2'>Eliminar</a>";
+                    echo "<a href='./verImgProduct.php?id=$idpro' class='btn btn-success ml-2'>Ver imágenes</a>";
+                    echo "</td>";
+                    echo "</tr>";
+                }
                 ?>
             </tbody>
         </table>
     </div>
-    
-    
+
+
     <?php include_once "./public/footer/footer.php"; ?>
 </body>
-</html> 
+
+</html>

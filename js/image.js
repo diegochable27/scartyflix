@@ -18,7 +18,7 @@ $(document).on("change", "#validatedCustomFile", function () {
     }
 
     if (seEncontraronArchivosNoValidos) {
-        alert("Se encontraron archivos no validos");
+        $("#ModalError").modal("show");
     } else {
         alert("Todos los archivos son validos");
     }
