@@ -23,3 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send();
     });
 });
+
+
+const btnbuscar = document.getElementById('btnbuscar');
+
+function buscartdos() {
+    const cuerpo = document.getElementById('cuerpo');
+    const resultados = document.getElementById('resultados');
+
+    cuerpo.classList.add('d-none');
+    resultados.classList.remove('d-none');
+}

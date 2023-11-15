@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
     <link href="./styles/navbarestilos.css">
+    <link href="./styles/buscador.css">
     <title>Fancy Store</title>
 </head>
 
@@ -19,6 +20,7 @@
     include_once "./public/navbar/navbar.php";
     ?>
     <br>
+    <div class="cuerpo" id="cuerpo">
     <header class="jumbotron jumbotron-fluid">
         <div class="container text-center">
             <?php
@@ -115,6 +117,10 @@
 
         </div>
     </section>
+    </div>
+    <div class="d-none" id="resultados">
+        <div class="resultadosb" id="resultadosBusqueda"></div>
+    </div>
     <br>
     <script src="./js/buscador.js"></script>        
     <?php include_once "./public/footer/footer.php"; ?>

@@ -9,7 +9,7 @@ if (isset($_GET['nombreproducto'])) {
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "Nombre: " . $row["nombre"] . "<br>"; // Mostrar los resultados
+            echo $row["nombre"] . "<br>"; // Mostrar los resultados
         }
     } else {
         echo "No se encontraron resultados para '$nombreproducto'.";

@@ -87,21 +87,8 @@
                     if (strlen($descripcion) > 50) {
                         $descripcion = substr($descripcion, 0, 50) . "...";
                     }
-                    echo "<tr>";
-                    echo "<td>$idpro</td>";
-                    echo "<td>$nombre</td>";
-                    echo "<td>$descripcion</td>";
-                    echo "<td>$categoria</td>";
-                    echo "<td>$cantidad</td>";
-                    echo "<td>$precio</td>";
-                    echo "<td class='justify-content-between'>";
-                    // Que envíe el id del producto y del dueño
-                    echo "<a href='./editarproductos.php?id=$idpro' class='btn btn-warning'>Editar</a>";
-
-                        $sqlcategoria = "SELECT * FROM categoria WHERE id_categoria = '$categoria'";
-                        $resultcategoria = mysqli_query($conexion, $sqlcategoria);
-                        $rowcategoria = mysqli_fetch_array($resultcategoria);
-                        $categoria = $rowcategoria['nombre'];
+                    
+                
 
                         if(strlen($descripcion) > 50){
                             $descripcion = substr($descripcion, 0, 50) . "...";
@@ -116,7 +103,7 @@
                         echo "<td class = 'justify-content-between' >";
                         echo "<a href='./editarproductos.php?id=$idpro' class='btn btn-warning'>Editar</a>";
                         echo "<a href='./db/eliminarproducto.php?id=$idpro' class='btn btn-danger ml-3'>Eliminar</a>";
-                        echo "<a href='./verImgProduct.php?id=$idpro' class='btn btn-success ml-3' >Ver imagnes</a>";
+                        echo "<a href='./verImgProduct.php?id=$idpro' class='btn btn-success ml-3' >Ver imagenes</a>";
                         echo "</td>";
                         echo "</tr>";
                     }
