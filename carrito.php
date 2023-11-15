@@ -34,6 +34,7 @@
                 $sql = "SELECT * FROM carrito WHERE id_usuario = '$id'";
                 $result = mysqli_query($conexion, $sql);
                 $carritototal = $result->num_rows;
+                $_SESSION["Carritototal"] = $carritototal;
                 while ($row = mysqli_fetch_array($result)) {
                     $idtodo = $row['id'];
                     $idproducto = $row['id_product'];

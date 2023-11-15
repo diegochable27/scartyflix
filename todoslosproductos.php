@@ -57,7 +57,7 @@
                             <?php echo '<img class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" src="'.$foto.'" alt="Nombre del Producto">'?>
                                 <div class="position-absolute top-0 end-0 m-2">
                                     <form action="./todoslosproductos.php">
-                                        <button type="button" class="btn btn-outline-secondary"><i class="far fa-heart"></i></button>
+                                        <button type="button" class="btn btn-outline-secondary" name=<?php  echo "favorito" . $idproducto ?> ><i class="far fa-heart"></i></button>
                                         <button type="submit" class="btn btn-outline-secondary ms-2" name=<?php  echo "carrito" . $idproducto ?> ><i class="fas fa-shopping-cart"></i></button>
                                     </form>
                                 </div>
@@ -79,8 +79,21 @@
                         echo '<script>alert("Producto agregado al carrito")</script>';
                     }
                 }
+
+                if(isset($_GET["favorito" . $idproducto])){
+                    $sqlfavorito = "INSERT INTO favoritos (id_product, id_usuario) VALUES ('$idproducto', '$_SESSION[id]')";
+                    $resultfavorito = mysqli_query($conexion, $sqlfavorito);
+
+                    if($resultfavorito){
+                        echo '<script>alert("Producto agregado a favoritos")</script>';
+                    }else{
+                        echo '<script>alert("Error al agregar el producto a favoritos")</script>';
+                                            
+                    }
+                }
             }
-                //si se preciona el boton de carrito se agrega el producto al carrito
+
+
                 
 
             ?>
