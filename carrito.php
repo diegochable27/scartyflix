@@ -46,6 +46,7 @@
                     $resultfotos = mysqli_query($conexion, $sqlfotos);
                     $rowfotos = mysqli_fetch_array($resultfotos);
                     $foto = $rowfotos['ruta_imagen'];
+                    $preciototal = $_SESSION["total"] + $precio;
                     $_SESSION["total"] = $_SESSION["total"] + $precio;
 
 
@@ -79,7 +80,7 @@
                 <?php
 
                 }
-                    echo $_SESSION["total"];
+                echo $_SESSION["total"];
                 ?>
                 <div class="row p-2 bg-white border rounded">
                     <div class="col-md-3 mt-1">
@@ -89,17 +90,43 @@
                         <h5>Total</h5>
                         <h4 class="mr-1"><?php echo "$" . $_SESSION["total"] ?></h4>
                         <h5>IvA</h5>
-                        <h4 class="mr-1"><?php $iva= 14.324 * $carritototal; echo "$" . $iva  ?></h4>
+                        <h4 class="mr-1"><?php $iva = 14.324 * $carritototal;
+                                            echo "$" . $iva  ?></h4>
                     </div>
                     <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                         <div class="d-flex flex-row align-items-center">
-                            <h4 class="mr-1"><?php 
-                            $_SESSION["total"] = $_SESSION["total"] + $iva;
-                            echo "$" . $_SESSION["total"]
-                             ?></h4>
+                            <h4 class="mr-1"><?php
+                                                $_SESSION["total"] = $_SESSION["total"] + $iva;
+                                                echo "$" . $_SESSION["total"]
+                                                ?></h4>
                         </div>
                         <div class="d-flex flex-column mt-4">
-                            <a href="./pestañadepago.php" class="btn btn-primary btn-sm" type="button">Comprar</a>
+                            <!-- Replace 'test' with your Client ID -->
+                            <script src="https://www.paypal.com/sdk/js?client-id=AfDLYuAMrmwNCpMYeaYcbAurHpArr-WYGWtDPUefbpFotpibKUqBYhxAkzSoh43QMqxz0IgwyYLyJb16&currency=MXN"></script>
+
+                            <div id="paypal-button-container"></div>
+
+                            <script>
+                                paypal.Buttons({
+                                    createOrder: function(data, actions) {
+                                        // Set up the transaction
+                                        return actions.order.create({
+                                            purchase_units: [{
+                                                amount: {
+                                                    value: '<?php echo $preciototal ?>'
+                                                }
+                                            }]
+                                        });
+                                    },
+                                    onApprove: function(data, actions) {
+                                        // Capture the funds from the transaction
+                                        return actions.order.capture().then(function(details) {
+                                            // Show a success message to the buyer
+                                            alert('Transaction completed by ' + details.payer.name.given_name);
+                                        });
+                                    }
+                                }).render('#paypal-button-container'); // Display the button on the page
+                            </script>
                         </div>
                     </div>
                 </div>

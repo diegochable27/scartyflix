@@ -20,7 +20,7 @@
     <?php
     session_start();
     include_once "./public/navbar/navbar.php";
-    $total = $_SESSION["total"];
+    $_SESSION["total"] = 0
     ?>
     <div class="container mt-5">
         <div class="row">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                          <?php
+                            <?php
                             include("./db/conexion.php");
                             $id = $_SESSION['id'];
                             $sql = "SELECT * FROM carrito WHERE id_usuario = '$id'";
@@ -50,7 +50,7 @@
                                 $rowfotos = mysqli_fetch_array($resultfotos);
                                 $foto = $rowfotos['ruta_imagen'];
                                 $_SESSION["total"] = $_SESSION["total"] + $precio;
-                                
+
                                 //imprimir el nombre y el precio7
                                 echo '<div class="col-md-5">';
                                 echo '<div class="d-flex flex-row">';
@@ -68,8 +68,9 @@
                                 echo '</div>';
                                 echo '</div>';
 
+                                $_SESSION["total"] = $_SESSION["total"] + $precio;
                             }
-                          ?>
+                            ?>
                         </div>
                         <hr>
                         <div class="row">
@@ -79,9 +80,10 @@
                                 <p class="mb-0">Total</p>
                             </div>
                             <div class="col text-end">
-                                <p class="mb-0">$<?php $precio = $_SESSION["total"];  echo $precio; ?></p>
+                                <p class="mb-0">$<?php $precio = $_SESSION["total"];
+                                                    echo $precio; ?></p>
                                 <p class="mb-0">Gratis</p>
-                                <p class="mb-0">$<?php echo $total ?></p>
+                                <p class="mb-0">$<?php echo $_SESSION["total"] ?></p>
                             </div>
                         </div>
                     </div>
@@ -93,7 +95,7 @@
                         Resumen de la Compra
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Total: <?php echo $total; ?></p>
+                        <p class="card-text">Total: <?php echo $_SESSION["total"]; ?></p>
                         <div id="paypal-button-container"></div>
                         <p id="result-message"></p>
                     </div>
@@ -101,12 +103,32 @@
             </div>
         </div>
     </div>
-    <div id="paypal-button-container"></div>
-    <p id="result-message"></p>
-    <!-- Replace the "test" client-id value with your client-id -->
-    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
-    <script src="./js/paypal.js"></script>
+    <!-- Replace 'test' with your Client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AfDLYuAMrmwNCpMYeaYcbAurHpArr-WYGWtDPUefbpFotpibKUqBYhxAkzSoh43QMqxz0IgwyYLyJb16&currency=MXN"></script>
 
+    <div id="paypal-button-container"></div>
+
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                // Set up the transaction
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '<?php echo $precio ?>' 
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                // Capture the funds from the transaction
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                });
+            }
+        }).render('#paypal-button-container'); // Display the button on the page
+    </script>
     <?php include_once "./public/footer/footer.php"; ?>
 </body>
 
