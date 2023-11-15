@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (xhr.status === 200) {
                     // Mostrar los resultados en el contenedor
                     resultadosBusqueda.innerHTML = xhr.responseText;
+                    
                 } else {
                     console.error('Hubo un error en la solicitud.');
                 }
