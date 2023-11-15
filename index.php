@@ -116,7 +116,7 @@
         </div>
     </section>
     <br>
-
+    <script src="./js/buscador.js"></script>        
     <?php include_once "./public/footer/footer.php"; ?>
 
 </body>

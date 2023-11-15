@@ -41,13 +41,25 @@
         <!-- Buscador de PC -->
         <div class=" collapse navbar-collapse" id="navbarNavDropdown">
             <div class="ms-auto d-none d-lg-block">
-                <form action="./db/BuscarProductos.php"  method="GET">
+                <form action="" method="GET">
+                    <div class="input-group">
+                        <span class="border-warning input-group-text bg-warning text-white"><i
+                                class="bi bi-search"></i></span>
+                        <input type="text" name="nombreproducto" id="nombreproducto"
+                            class="form-control border-warning light-table-filter" style="color:#7a7a7a"
+                            placeholder="Buscar por nombre">
+                        <button type="submit" class="btn btn-warning text-white">Buscar</button>
+                    </div>
+                </form>
+                <div id="resultadosBusqueda"></div>
+
+                <!-- <form action="./db/BuscarProductos.php"  method="GET">
                     <div class="input-group">
                         <span class="border-warning input-group-text bg-warning text-white"><i class="bi bi-search"></i></span>
                         <input type="text" name="nombreproducto" class="form-control border-warning" style="color:#7a7a7a" placeholder="Buscar por nombre">
                         <button type="submit" class="btn btn-warning text-white">Buscar</button>
                     </div>
-                </form>
+                </form> -->
             </div>
             <ul class="navbar-nav ms-auto ">
                 <li class="nav-item">
