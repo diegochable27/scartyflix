@@ -35,6 +35,7 @@
                 $result = mysqli_query($conexion, $sql);
                 $carritototal = $result->num_rows;
                 while ($row = mysqli_fetch_array($result)) {
+                    $idtodo = $row['id'];
                     $idproducto = $row['id_product'];
                     $sql2 = "SELECT * FROM Productos WHERE id_producto = '$idproducto'";
                     $result2 = mysqli_query($conexion, $sql2);
@@ -71,7 +72,10 @@
                             </div>
                             <h6 class="text-success">Envio Gratis</h6>
                             <div class="d-flex flex-column mt-4">
-                                <button class="btn btn-danger btn-sm" type="button">Eliminar</button>
+                                <form action="./carrito.php">
+                                    <button 7 class="btn btn-danger btn-sm" type="submit" name=<?php echo "eliminar" . $idtodo ?>>Eliminar</button>
+
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -79,8 +83,18 @@
 
                 <?php
 
+                    if (isset($_GET["eliminar" . $idtodo])) {
+                        $sqleliminar = "DELETE FROM carrito WHERE id = '$idtodo'";
+                        $resulteliminar = mysqli_query($conexion, $sqleliminar);
+
+                        if ($result) {
+                            echo '<script>alert("Producto eliminado del carrito")</script>';
+                            echo '<script>window.location="./carrito.php"</script>';
+                        } else {
+                            echo '<script>alert("Error al eliminar el producto")</script>';
+                        }
+                    }
                 }
-                echo $_SESSION["total"];
                 ?>
                 <div class="row p-2 bg-white border rounded">
                     <div class="col-md-3 mt-1">
