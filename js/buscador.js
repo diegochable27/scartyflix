@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // Enviar la solicitud al script PHP que maneja la búsqueda
-        xhr.open('GET', `BuscarProductos.php?nombreproducto=${nombreProducto}`, true);
+        xhr.open('GET', `./db/BuscarProductos.php?nombreproducto=${nombreProducto}`, true);
         xhr.send();
     });
 });
