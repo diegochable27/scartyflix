@@ -80,8 +80,11 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
+                                                <!-- <form action="./todoslosproductos.php">                            
+                                                    <button type="submit" class="btn btn-primary btn-block" name= >Añadir al carrito</button>
+                                                </form> -->
                                                 <?php
-                                                echo '<button href="./db/guardarcarrito.php?id='. $id . '" class="btn btn-primary btn-block">';?>Añadir al carrito</button>
+                                                echo '<a href="./db/guardarcarrito.php?id='. $id . '" class="btn btn-primary btn-block">';?>Añadir al carrito</a>
 
                                             </div>
                                         </div>
