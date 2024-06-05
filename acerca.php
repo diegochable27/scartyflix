@@ -24,7 +24,7 @@
 
     <br>
     <div class="container">
-        <h1 class="text-center">Acerca de nosotros</h1>
+        <h1 class="text-center">Acerca de nosotrossssss</h1>
         <p class="text-center">Bienvenido a nuestro sitio web de películas y series. Aquí podrás encontrar una amplia variedad de contenido para disfrutar en tu tiempo libre.</p>
         <p class="text-center">Nuestro equipo está compuesto por apasionados del cine y la televisión que trabajan duro para traerte las últimas novedades y los clásicos atemporales.</p>
         <p class="text-center">Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto con nosotros.</p>
