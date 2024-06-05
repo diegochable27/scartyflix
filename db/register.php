@@ -8,7 +8,8 @@ $rol = 3;
 $estado = 1;
 $foto = "./img/logodefaul.png";
 
-$consulta = "INSERT INTO usuarios(nombre, apellidos, correo, contrasena, foto, id_rol, id_estatus) VALUES ('$nombre', '$apellido', '$correo', '$contrasena' , '$foto', '$rol', '$estado')";
+$contrasena = password_hash($contrasena, PASSWORD_DEFAULT);
+$consulta = "INSERT INTO usuarios(nombre, apellidos, correo, contrasena, foto, id_rol) VALUES ('$nombre', '$apellido', '$correo', '$contrasena' , '$foto', '$rol')";
 $resultado = mysqli_query($conexion, $consulta);
 
 if ($resultado) {

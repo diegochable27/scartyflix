@@ -2,7 +2,7 @@
 $server = "localhost";
 $user = "root";
 $pass = "";
-$bd = "shops";
+$bd = "scartyflix";
 $conexion = mysqli_connect($server, $user, $pass, $bd);
 
 if (!$conexion) {

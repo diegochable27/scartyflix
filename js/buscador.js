@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     inputNombreProducto.addEventListener('input', function() {
         const nombreProducto = inputNombreProducto.value;
-
+        
         // Realizar la solicitud AJAX
         const xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Mostrar los resultados en el contenedor
                     resultadosBusqueda.innerHTML = xhr.responseText;
                     
+                    // Verificar si no hay resultados y mostrar un mensaje
+                    if (xhr.responseText.trim() === '') {
+                        resultadosBusqueda.innerHTML = 'No se encontraron resultados.';
+                    }
                 } else {
                     console.error('Hubo un error en la solicitud.');
                 }
@@ -24,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send();
     });
 });
-
 
 const btnbuscar = document.getElementById('btnbuscar');
 

@@ -11,6 +11,16 @@
     <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
     <link href="./styles/navbarestilos.css">
     <title>Configuración</title>
+
+    <style>
+        .btn-explorar {
+            background-color: #2f45ff !important;
+        }
+
+        .border-explorar {
+            border-color: #2f45ff !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -60,9 +70,6 @@
                                     actual</label>
                                 <input type="correo" class="form-control mb-2" name="correo" id="correo"
                                     placeholder="Ingresa tu correo" value=<?php echo $correos ?> readonly>
-                                <label for="exampleInputEmail1" class="form-label font-weight-bold">Correo nuevo</label>
-                                <input type="correo" class="form-control mb-2" name="correo" id="correo"
-                                    placeholder="Ingresa tu correo">
                             </div>
                             <hr />
                             <div class="mb-4">
@@ -76,7 +83,7 @@
                                     placeholder="Ingresa tu contraseña">
                             </div>
                             <div>
-                                <button type="submit" class="btn btn-warning w-80">Guardar</button>
+                                <button type="submit" class="btn btn-explorar w-80">Guardar</button>
                                 <button type="submit" class="btn btn-secondary w-80">Cancelar</button>
                             </div>
                         </form>
@@ -93,9 +100,9 @@
                                     width="200px" alt="..." class="mx-auto rounded-circle mb-3" id="fotoperfil">';
                                 ?>
                                 <img src="./img/logodefaul.png" height="200px" width="200px" alt="..." class="mx-auto rounded-circle mb-3 d-none " id="fotoperfilcambiado">
-                                <form action="" class="-none">
+                                <!-- <form action="" class="-none">
                                     <input type="file" id="inputFile" name="filename">
-                                </form>
+                                </form> -->
                                 <button type="button" class="btn btn-dark btn-sm" 
                                     style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
                                     <i class="fa fa-pencil-square-o" id="btnEditar"></i> Editar
@@ -116,11 +123,6 @@
                                 echo '</br>';
                                 echo '</br>';
                                 echo '</br>';
-
-                                if ($nombrerol !== 'vendedor') {
-                                    echo '<h6>¿Quieres ser vendedor?</h6>';
-                                    echo '<a href="#" class="btn btn-warning w-80">Solicitar</a>';
-                                }
                             }
                             ?>
                         </div>

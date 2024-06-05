@@ -1,15 +1,14 @@
-
 <?php
 include("conexion.php");
 session_start();
 $correo = $_POST['correo'];
 $contrasena = $_POST['contrasena'];
 
-$consulta = "SELECT * FROM usuarios WHERE correo = '$correo' AND contrasena = '$contrasena'";
+$consulta = "SELECT * FROM usuarios WHERE correo = '$correo'";
 $resultado = mysqli_query($conexion, $consulta);
 $row = mysqli_fetch_array($resultado);
 
-if ($row['correo'] == $correo && $row['contrasena'] == $contrasena) {
+if ($row['correo'] == $correo && password_verify($contrasena, $row['contrasena'])) {
     $_SESSION['correo'] = $correo;
     $_SESSION['nombre'] = $row['nombre'];
     $_SESSION['apellidos'] = $row['apellidos'];
@@ -22,7 +21,5 @@ if ($row['correo'] == $correo && $row['contrasena'] == $contrasena) {
     alert('Usuario o contraseña incorrectos')
     window.location= '../public/auth/login.php'
     </script>";
-
 }
-
 ?>

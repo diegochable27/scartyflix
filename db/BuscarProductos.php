@@ -4,7 +4,7 @@ include("./conexion.php");
 if (isset($_GET['nombreproducto'])) {
     $nombreproducto = $_GET['nombreproducto'];
 
-    $sql = "SELECT * FROM productos WHERE nombre LIKE '%$nombreproducto%'";
+    $sql = "SELECT * FROM peliculas WHERE nombre LIKE '%$nombreproducto%'";
     $result = $conexion->query($sql);
 
     if ($result->num_rows > 0) {

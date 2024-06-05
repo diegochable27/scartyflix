@@ -35,7 +35,7 @@
             $idProducto = $_GET['id'];
 
         
-            $sql = "SELECT * FROM productos WHERE id_producto = '$idProducto'";
+            $sql = "SELECT * FROM peliculas WHERE id_pelicula = '$idProducto'";
             $result = mysqli_query($conexion, $sql);
             $row = mysqli_fetch_array($result);
             $propetario = $row['nombre'];
